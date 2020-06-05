@@ -2,4 +2,7 @@
 set -e
 
 chown -R coder:coder /home/coder/project
-dumb-init code-server --allow-http --no-auth
+
+/usr/bin/code-server --install-extension bmewburn.vscode-intelephense-client --force
+
+dumb-init fixuid -q /usr/bin/code-server --bind-addr 0.0.0.0:${PORT} .

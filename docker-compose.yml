@@ -5,8 +5,10 @@ services:
       context: .
       dockerfile: Docker/Dockerfile
     ports:
-      - 8443:8443
+      - 8083:8080
     volumes:
       - ./code:/home/coder/project
       - /home/coder/project/vendor
-    #command: "--allow-http --no-auth"
+    environment:
+      - PORT=8080
+      - PASSWORD=test
