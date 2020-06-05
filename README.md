@@ -11,6 +11,6 @@ This is a one step installation
 
 ```docker-compose build && docker-compose up -d```
 
-***Access***
+**Access**
 
 In order to access the IDE, go to the following [URL](http://localhost:8083/)
