@@ -8,4 +8,5 @@ services:
       - 8443:8443
     volumes:
       - ./code:/home/coder/project
-    command: "--allow-http --no-auth"
+      - /home/coder/project/vendor
+    #command: "--allow-http --no-auth"

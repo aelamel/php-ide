@@ -19,7 +19,13 @@ RUN apt-get install -y php-pear php7.2-curl php7.2-dev php7.2-gd \
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-COPY code /home/coder/projet
 
+COPY code /home/coder/project/
+COPY Docker/startup.sh /tmp/
+
+WORKDIR /home/coder/project
 RUN composer install
-USER coder
+RUN chown -R coder:coder /home/coder/project
+RUN chmod +x /tmp/startup.sh
+
+ENTRYPOINT ["/tmp/startup.sh"]
