@@ -14,3 +14,5 @@ This is a one step installation
 **Access**
 
 In order to access the IDE, go to the following [URL](http://localhost:8083/)
+
+The IDE password is : test, you can change it in the docker-compose.yml file
