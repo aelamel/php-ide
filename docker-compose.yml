@@ -1,0 +1,11 @@
+version: "2"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile
+    ports:
+      - 8443:8443
+    volumes:
+      - ./code:/home/coder/project
+    command: "--allow-http --no-auth"
